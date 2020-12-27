@@ -58,7 +58,7 @@ class StrokeCenterDrawer:
 #                shadowColor)
 #     _draw_text(x, y, text, (255, 255, 255))
 
-def generate_prediction(img_path: str, font: str, prediction: str) -> Image:
+def insert_text_center(img_path: str, font: str, prediction: str) -> Image:
     img = Image.open(img_path)
     StrokeCenterDrawer(img, font).draw(prediction)
     return img
