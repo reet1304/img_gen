@@ -10,7 +10,6 @@ class StrokeCenterDrawer:
         self._generate_draw_positions(img)
 
     def _generate_draw_positions(self, img: Image):
-        print("_generate_draw_positions")
         x_center, y_center = img.width // 2, img.height // 2
         self._center_position = (x_center, y_center)
         shift = (img.width // 13) / 50
@@ -29,7 +28,6 @@ class StrokeCenterDrawer:
         self._draw.text(pos, text, font=self._font, fill=color, anchor='ms', align="center")
 
     def draw(self, text: str, main_color = (255, 255, 255), stroke_color = (0, 0, 0)):
-        print("draw")
         for pos in self._stroke_positions:
             self._draw_pos(pos, text, color=stroke_color)
         self._draw_pos(self._center_position, text, color=main_color)
