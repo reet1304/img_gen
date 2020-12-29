@@ -25,36 +25,13 @@ class StrokeCenterDrawer:
         ]
 
     def _draw_pos(self, pos, text: str, color):
-        self._draw.text(pos, text, font=self._font, fill=color, anchor='ms', align="center")
+        self._draw.text(pos, text, font=self._font, fill=color, anchor='mm', align="center")
 
     def draw(self, text: str, main_color = (255, 255, 255), stroke_color = (0, 0, 0)):
         for pos in self._stroke_positions:
             self._draw_pos(pos, text, color=stroke_color)
         self._draw_pos(self._center_position, text, color=main_color)
 
-
-# def _texting(img, text: str):
-#     y = img.height // 2
-#     x = img.width // 2
-#     shadowColor = "black"
-#     # for adj in range(outlineAmount):
-#     adj = font_size / 50
-#     _draw_text(x - adj, y, text,
-#                shadowColor)
-#     _draw_text(x + adj, y, text,
-#                shadowColor)
-#     _draw_text(x, y + adj, text, shadowColor)
-#     # move down
-#     _draw_text(x, y - adj, text,
-#                shadowColor)
-#     _draw_text(x - adj, y + adj, text, shadowColor)
-#     _draw_text(x + adj, y + adj, text,
-#                shadowColor)
-#     _draw_text(x - adj, y - adj, text,
-#                shadowColor)
-#     _draw_text(x + adj, y - adj, text,
-#                shadowColor)
-#     _draw_text(x, y, text, (255, 255, 255))
 
 def insert_text_center(img_path: str, font: str, prediction: str) -> Image:
     img = Image.open(img_path)

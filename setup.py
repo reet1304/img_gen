@@ -7,4 +7,7 @@ setup(
           'pillow',
     ],
     packages=find_packages(),
+    scripts=[
+        'preshow'
+    ],
 )
