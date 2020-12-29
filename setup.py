@@ -8,6 +8,6 @@ setup(
     ],
     packages=find_packages(),
     scripts=[
-        'preshow'
+        'preshow.py'
     ],
 )
