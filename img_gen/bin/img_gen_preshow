@@ -1,20 +1,17 @@
 #!usr/bin/env python3
 
-from img_gen import insert_text_center
+import img_gen
 import os
 import sys
 
-import importlib.resources as pkg_resources
-import img_gen.fonts
-
-# font = pkg_resources.path('img_gen.fonts', 'arial.ttf')
-# # font = pkg_resources.resource_filename(__name__, "arial.ttf")
-font = os.path.join(os.path.dirname(img_gen.__file__), 'fonts', 'arial.ttf')
-
-print("font is:", font)
 
 if __name__ == '__main__':
     background_dir = sys.argv[1]
+    if len(sys.argv) == 3:
+        font = sys.argv[2]
+    else:
+        font = os.path.join(os.path.dirname(img_gen.__file__), 'fonts', 'arial.ttf')
+        print("font is:", font)
     assert os.path.isdir(background_dir)
     background_paths = [os.path.join(background_dir, path) for path in os.listdir(background_dir)]
     # for path in os.listdir(backs_dir):
@@ -28,5 +25,5 @@ if __name__ == '__main__':
         for background in background_paths:
             print("show with background: ", background)
             # "../happy_predictions/assets/backgrounds/b1.jpg
-            insert_text_center(background, font ,prediction.replace('@', '\n')).show()
+            img_gen.insert_text_center(background, font ,prediction.replace('@', '\n')).show()
 
