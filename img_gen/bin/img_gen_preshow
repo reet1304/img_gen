@@ -9,7 +9,7 @@ import img_gen.fonts
 
 # font = pkg_resources.path('img_gen.fonts', 'arial.ttf')
 # # font = pkg_resources.resource_filename(__name__, "arial.ttf")
-font = os.path.join(img_gen.__file__, 'fonts', 'arial.ttf')
+font = os.path.join(os.path.dirname(img_gen.__file__), 'fonts', 'arial.ttf')
 
 print("font is:", font)
 
