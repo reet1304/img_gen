@@ -11,7 +11,7 @@ if __name__ == '__main__':
         font = sys.argv[2]
     else:
         font = os.path.join(os.path.dirname(img_gen.__file__), 'fonts', 'arial.ttf')
-        print("font is:", font)
+    print("font is:", font)
     assert os.path.isdir(background_dir)
     background_paths = [os.path.join(background_dir, path) for path in os.listdir(background_dir)]
     # for path in os.listdir(backs_dir):
