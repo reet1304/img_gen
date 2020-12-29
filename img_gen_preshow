@@ -3,7 +3,10 @@
 from img_gen import insert_text_center
 import os
 import sys
-import csv
+
+import pkg_resources
+font = pkg_resources.resource_filename(__name__, "arial.ttf")
+print("font is:", font)
 
 if __name__ == '__main__':
     background_dir = sys.argv[1]
@@ -14,9 +17,11 @@ if __name__ == '__main__':
 
 #    predictions = list(csv.reader(open("assets/2021_n.csv", 'r'), delimiter=';'))
 
+    print("input prediction to show:")
     while True:
         prediction = input()
         for background in background_paths:
             print("show with background: ", background)
-            insert_text_center(background, 'arial.ttf' ,prediction.replace('@', '\n')).show()
+            # "../happy_predictions/assets/backgrounds/b1.jpg
+            insert_text_center(background, font ,prediction.replace('@', '\n')).show()
 
