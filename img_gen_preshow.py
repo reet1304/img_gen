@@ -1,3 +1,5 @@
+#!usr/bin/env python3
+
 from img_gen import insert_text_center
 import os
 import sys

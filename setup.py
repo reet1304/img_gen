@@ -2,12 +2,12 @@ from setuptools import setup, find_packages
 
 setup(
     name='img_gen',
-    version='0.0.6',
+    version='0.0.7',
     install_requires=[
           'pillow',
     ],
     packages=find_packages(),
     scripts=[
-        'preshow.py'
+        'img_gen_preshow'
     ],
 )
