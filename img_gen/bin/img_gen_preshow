@@ -4,8 +4,11 @@ from img_gen import insert_text_center
 import os
 import sys
 
-import pkg_resources
-font = pkg_resources.resource_filename(__name__, "arial.ttf")
+import importlib.resources as pkg_resources
+import img_gen.fonts
+
+font = pkg_resources.path('img_gen.fonts', 'arial.ttf')
+# font = pkg_resources.resource_filename(__name__, "arial.ttf")
 print("font is:", font)
 
 if __name__ == '__main__':
