@@ -1,8 +1,9 @@
 *.jpg
 *.otf
-*.ttf
+
 *.csv
 .idea
 .egg-info
 build
 dist
+__pycache__

@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='img_gen',
-    version='0.0.7',
+    version='0.0.8',
     install_requires=[
           'pillow',
     ],
@@ -10,4 +10,6 @@ setup(
     scripts=[
         'img_gen_preshow'
     ],
+    package_data={'img_gen': ['arial.ttf']},
+
 )
