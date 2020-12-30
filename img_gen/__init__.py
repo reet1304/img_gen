@@ -16,13 +16,13 @@ class StrokeCenterDrawer:
         shift = (img.width // 13) / 50
         self._stroke_positions = [
             (x_center - shift, y_center),
-            (x_center - shift, y_center + shift),
+            #(x_center - shift, y_center + shift),
             (x_center, y_center + shift),
-            (x_center + shift, y_center + shift),
+            #(x_center + shift, y_center + shift),
             (x_center + shift, y_center),
-            (x_center + shift, y_center - shift),
+            #(x_center + shift, y_center - shift),
             (x_center, y_center - shift),
-            (x_center - shift, y_center - shift),
+            #(x_center - shift, y_center - shift),
         ]
 
     def _draw_pos(self, pos, text: str, color):
@@ -35,9 +35,13 @@ class StrokeCenterDrawer:
 
 @lru_cache
 def lru_open_image(img_path):
+    print(2)
     return Image.open(img_path)
 
 def insert_text_center(img_path: str, font: str, prediction: str) -> Image:
+    print(1)
     img = lru_open_image(img_path).copy()
+    print(3)
     StrokeCenterDrawer(img, font).draw(prediction)
+    print(4)
     return img
