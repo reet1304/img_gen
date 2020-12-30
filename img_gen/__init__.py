@@ -1,3 +1,4 @@
+from functools import lru_cache
 from PIL import Image, ImageDraw, ImageFont
 
 class StrokeCenterDrawer:
@@ -32,8 +33,11 @@ class StrokeCenterDrawer:
             self._draw_pos(pos, text, color=stroke_color)
         self._draw_pos(self._center_position, text, color=main_color)
 
+@lru_cache
+def lru_open_image(img_path):
+    return Image.open(img_path)
 
 def insert_text_center(img_path: str, font: str, prediction: str) -> Image:
-    img = Image.open(img_path)
+    img = lru_open_image(img_path).copy()
     StrokeCenterDrawer(img, font).draw(prediction)
     return img
