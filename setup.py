@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='img_gen',
-    version='0.0.12',
+    version='0.0.13',
     install_requires=[
           'pillow',
     ],
